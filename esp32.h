@@ -1279,9 +1279,93 @@ typedef volatile uint32		                    vuint32 __attribute__((__may_alias_
 #define I2C0_COMD15_REG                      (*(vuint32 *)(&__IPSBAR[0x3FF53094]))              /*Command reg for I2C0*/
 #define I2C1_COMD15_REG                      (*(vuint32 *)(&__IPSBAR[0x3FF67094]))              /*Command reg for I2C1*/
 
+#define I2C0_COMDn_REG(n)                    (*(vuint32 *)(&__IPSBAR[0x3FF53058 + (n * 4)]))   /*Command reg for I2C0*/
+#define I2C1_COMDn_REG(n)                    (*(vuint32 *)(&__IPSBAR[0x3FF67058 + (n * 4)]))   /*Command reg for I2C1*/
+
 /***********************************************************************/
 /*
  * I2S registers
+ *
+ * 
+ */
+
+#define I2S0_FIFO_WR_REG                     (*(vuint32 *)(&__IPSBAR[0x3FF4F004]))              /*Writes the data that I2S0 receives from FIFO*/
+#define I2S1_FIFO_WR_REG                     (*(vuint32 *)(&__IPSBAR[0x3FF6D004]))              /*Writes the data that I2S1 receives from FIFO*/
+#define I2S0_FIFO_RD_REG                     (*(vuint32 *)(&__IPSBAR[0x3FF4F008]))              /*Stores the data that I2S0 receives from FIFO*/
+#define I2S1_FIFO_RD_REG                     (*(vuint32 *)(&__IPSBAR[0x3FF6D008]))              /*Stores the data that I2S1 receives from FIFO*/
+
+#define I2S0_CONF_REG                        (*(vuint32 *)(&__IPSBAR[0x3FF4F008]))              /*I2S0 config and start/stop bits*/
+#define I2S1_CONF_REG                        (*(vuint32 *)(&__IPSBAR[0x3FF6D008]))              /*I2S1 config and start/stop bits*/
+#define I2S0_CONF1_REG                       (*(vuint32 *)(&__IPSBAR[0x3FF4F0A0]))              /*I2S0 PCM configuration register*/
+#define I2S1_CONF1_REG                       (*(vuint32 *)(&__IPSBAR[0x3FF6D0A0]))              /*I2S1 PCM configuration register*/
+#define I2S0_CONF2_REG                       (*(vuint32 *)(&__IPSBAR[0x3FF4F0A8]))              /*I2S0 ADC/LCD/camera configuration register*/
+#define I2S1_CONF2_REG                       (*(vuint32 *)(&__IPSBAR[0x3FF6D0A8]))              /*I2S1 ADC/LCD/camera configuration register*/
+#define I2S0_TIMING_REG                      (*(vuint32 *)(&__IPSBAR[0x3FF4F01C]))              /*I2S0 Signal delay and timing parameters*/
+#define I2S1_TIMING_REG                      (*(vuint32 *)(&__IPSBAR[0x3FF6D01C]))              /*I2S1 Signal delay and timing parameters*/
+#define I2S0_FIFO_CONF_REG                   (*(vuint32 *)(&__IPSBAR[0x3FF4F020]))              /*I2S0 FIFO configuration*/
+#define I2S1_FIFO_CONF_REG                   (*(vuint32 *)(&__IPSBAR[0x3FF6D020]))              /*I2S1 FIFO configuration*/
+#define I2S0_CONF_SINGLE_DATA_REG            (*(vuint32 *)(&__IPSBAR[0x3FF4F028]))              /*I2S0 Static channel output value*/
+#define I2S1_CONF_SINGLE_DATA_REG            (*(vuint32 *)(&__IPSBAR[0x3FF6D028]))              /*I2S1 Static channel output value*/
+#define I2S0_CONF_CHAN_REG                   (*(vuint32 *)(&__IPSBAR[0x3FF4F02C]))              /*I2S0 Channel configuration*/
+#define I2S1_CONF_CHAN_REG                   (*(vuint32 *)(&__IPSBAR[0x3FF6D02C]))              /*I2S1 Channel configuration*/
+#define I2S0_LC_HUNG_CONF_REG                (*(vuint32 *)(&__IPSBAR[0x3FF4F074]))              /*I2S0 Timeout detection configuration*/
+#define I2S1_LC_HUNG_CONF_REG                (*(vuint32 *)(&__IPSBAR[0x3FF6D074]))              /*I2S1 Timeout detection configuration*/
+#define I2S0_CLKM_CONF_REG                   (*(vuint32 *)(&__IPSBAR[0x3FF4F0AC]))              /*I2S0 Bitclock configuration*/
+#define I2S1_CLKM_CONF_REG                   (*(vuint32 *)(&__IPSBAR[0x3FF6D0AC]))              /*I2S1 Bitclock configuration*/
+#define I2S0_SAMPLE_RATE_CONF_REG            (*(vuint32 *)(&__IPSBAR[0x3FF4F0B0]))              /*I2S0 Sample rate configuration*/
+#define I2S1_SAMPLE_RATE_CONF_REG            (*(vuint32 *)(&__IPSBAR[0x3FF6D0B0]))              /*I2S1 Sample rate configuration*/
+#define I2S0_PD_CONF_REG                     (*(vuint32 *)(&__IPSBAR[0x3FF4F0A4]))              /*I2S0 Power down configuration*/
+#define I2S1_PD_CONF_REG                     (*(vuint32 *)(&__IPSBAR[0x3FF6D0A4]))              /*I2S1 Power down configuration*/
+#define I2S0_STATE_REG                       (*(vuint32 *)(&__IPSBAR[0x3FF4F0BC]))              /*I2S0 Status register*/
+
+#define I2S0_LC_CONF_REG                     (*(vuint32 *)(&__IPSBAR[0x3FF4F060]))              /*I2S0 DMA configuration*/
+#define I2S1_LC_CONF_REG                     (*(vuint32 *)(&__IPSBAR[0x3FF6D060]))              /*I2S1 DMA configuration*/
+#define I2S0_RXEOF_NUM_REG                   (*(vuint32 *)(&__IPSBAR[0x3FF4F024]))              /*I2S0 Receive data count*/
+#define I2S1_RXEOF_NUM_REG                   (*(vuint32 *)(&__IPSBAR[0x3FF6D024]))              /*I2S1 Receive data count*/
+#define I2S0_OUT_LINK_REG                    (*(vuint32 *)(&__IPSBAR[0x3FF4F030]))              /*I2S0 DMA transmit linked list configuration and address*/
+#define I2S1_OUT_LINK_REG                    (*(vuint32 *)(&__IPSBAR[0x3FF6D030]))              /*I2S1 DMA transmit linked list configuration and address*/
+#define I2S0_IN_LINK_REG                     (*(vuint32 *)(&__IPSBAR[0x3FF4F034]))              /*I2S0 DMA receive linked list configuration and address*/
+#define I2S1_IN_LINK_REG                     (*(vuint32 *)(&__IPSBAR[0x3FF6D034]))              /*I2S1 DMA receive linked list configuration and address*/
+#define I2S0_OUT_EOF_DES_ADDR_REG            (*(vuint32 *)(&__IPSBAR[0x3FF4F038]))              /*I2S0 The address of transmit link descriptor producing EOF*/
+#define I2S1_OUT_EOF_DES_ADDR_REG            (*(vuint32 *)(&__IPSBAR[0x3FF6D038]))              /*I2S1 The address of transmit link descriptor producing EOF*/
+#define I2S0_IN_EOF_DES_ADDR_REG             (*(vuint32 *)(&__IPSBAR[0x3FF4F03C]))              /*I2S0 The address of receive link descriptor producing EOF*/
+#define I2S1_IN_EOF_DES_ADDR_REG             (*(vuint32 *)(&__IPSBAR[0x3FF6D03C]))              /*I2S1 The address of receive link descriptor producing EOF*/
+#define I2S0_OUT_EOF_BFR_DES_ADDR_REG        (*(vuint32 *)(&__IPSBAR[0x3FF4F040]))              /*I2S0 The address of transmit buffer producing EOF*/
+#define I2S1_OUT_EOF_BFR_DES_ADDR_REG        (*(vuint32 *)(&__IPSBAR[0x3FF6D040]))              /*I2S1 The address of transmit buffer producing EOF*/
+#define I2S0_INLINK_DSCR_REG                 (*(vuint32 *)(&__IPSBAR[0x3FF4F048]))              /*I2S0 The address of current inlink descriptor*/
+#define I2S1_INLINK_DSCR_REG                 (*(vuint32 *)(&__IPSBAR[0x3FF6D048]))              /*I2S1 The address of current inlink descriptor*/
+#define I2S0_INLINK_DSCR_BF0_REG             (*(vuint32 *)(&__IPSBAR[0x3FF4F04C]))              /*I2S0 The address of next inlink descriptor*/
+#define I2S1_INLINK_DSCR_BF0_REG             (*(vuint32 *)(&__IPSBAR[0x3FF6D04C]))              /*I2S1 The address of next inlink descriptor*/
+#define I2S0_INLINK_DSCR_BF1_REG             (*(vuint32 *)(&__IPSBAR[0x3FF4F050]))              /*I2S0 The address of next inlink data buffer*/
+#define I2S1_INLINK_DSCR_BF1_REG             (*(vuint32 *)(&__IPSBAR[0x3FF6D050]))              /*I2S1 The address of next inlink data buffer*/
+#define I2S0_OUTLINK_DSCR_REG                (*(vuint32 *)(&__IPSBAR[0x3FF4F054]))              /*I2S0 The address of current outlink descriptor*/
+#define I2S1_OUTLINK_DSCR_REG                (*(vuint32 *)(&__IPSBAR[0x3FF6D054]))              /*I2S1 The address of current outlink descriptor*/
+#define I2S0_OUTLINK_DSCR_BF0_REG            (*(vuint32 *)(&__IPSBAR[0x3FF4F058]))              /*I2S0 The address of next outlink descriptor*/
+#define I2S1_OUTLINK_DSCR_BF0_REG            (*(vuint32 *)(&__IPSBAR[0x3FF6D058]))              /*I2S1 The address of next outlink descriptor*/
+#define I2S0_OUTLINK_DSCR_BF1_REG            (*(vuint32 *)(&__IPSBAR[0x3FF4F05C]))              /*I2S0 The address of next outlink data buffer*/
+#define I2S1_OUTLINK_DSCR_BF1_REG            (*(vuint32 *)(&__IPSBAR[0x3FF6D05C]))              /*I2S1 The address of next outlink data buffer*/
+#define I2S0_LC_STATE0_REG                   (*(vuint32 *)(&__IPSBAR[0x3FF4F06C]))              /*I2S0 DMA receive status*/
+#define I2S1_LC_STATE0_REG                   (*(vuint32 *)(&__IPSBAR[0x3FF6D06C]))              /*I2S1 DMA receive status*/
+#define I2S0_LC_STATE1_REG                   (*(vuint32 *)(&__IPSBAR[0x3FF4F070]))              /*I2S0 DMA transmit status*/
+#define I2S1_LC_STATE1_REG                   (*(vuint32 *)(&__IPSBAR[0x3FF6D070]))              /*I2S1 DMA transmit status*/
+
+#define I2S0_PDM_CONF_REG                    (*(vuint32 *)(&__IPSBAR[0x3FF4F0B4]))              /*I2S0 PDM configuration*/
+#define I2S1_PDM_CONF_REG                    (*(vuint32 *)(&__IPSBAR[0x3FF6D0B4]))              /*I2S1 PDM configuration*/
+#define I2S0_PDM_FREQ_CONF_REG               (*(vuint32 *)(&__IPSBAR[0x3FF4F0B8]))              /*I2S0 PDM frequency configuration*/
+#define I2S1_PDM_FREQ_CONF_REG               (*(vuint32 *)(&__IPSBAR[0x3FF6D0B8]))              /*I2S1 PDM frequency configuration*/
+
+#define I2S0_INT_RAW_REG                     (*(vuint32 *)(&__IPSBAR[0x3FF4F00C]))              /*I2S0 Raw interrupt status*/
+#define I2S1_INT_RAW_REG                     (*(vuint32 *)(&__IPSBAR[0x3FF6D00C]))              /*I2S1 Raw interrupt status*/
+#define I2S0_INT_ST_REG                      (*(vuint32 *)(&__IPSBAR[0x3FF4F010]))              /*I2S0 Masked interrupt status*/
+#define I2S1_INT_ST_REG                      (*(vuint32 *)(&__IPSBAR[0x3FF6D010]))              /*I2S1 Masked interrupt status*/
+#define I2S0_INT_ENA_REG                     (*(vuint32 *)(&__IPSBAR[0x3FF4F014]))              /*I2S0 Interrupt enable bits*/
+#define I2S1_INT_ENA_REG                     (*(vuint32 *)(&__IPSBAR[0x3FF6D014]))              /*I2S1 Interrupt enable bits*/
+#define I2S0_INT_CLR_REG                     (*(vuint32 *)(&__IPSBAR[0x3FF4F018]))              /*I2S0 Interrupt clear bits*/
+#define I2S1_INT_CLR_REG                     (*(vuint32 *)(&__IPSBAR[0x3FF6D018]))              /*I2S1 Interrupt clear bits*/
+
+/***********************************************************************/
+/*
+ * UART registers
  *
  * 
  */
