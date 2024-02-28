@@ -1370,4 +1370,161 @@ typedef volatile uint32		                    vuint32 __attribute__((__may_alias_
  * 
  */
 
+#define UART0_CONF0_REG                      (*(vuint32 *)(&__IPSBAR[0x3FF40020]))              /*UART0 configuration register 0*/
+#define UART1_CONF0_REG                      (*(vuint32 *)(&__IPSBAR[0x3FF50020]))              /*UART1 configuration register 0*/
+#define UART2_CONF0_REG                      (*(vuint32 *)(&__IPSBAR[0x3FF6E020]))              /*UART2 configuration register 0*/
+#define UART0_CONF1_REG                      (*(vuint32 *)(&__IPSBAR[0x3FF40024]))              /*UART0 configuration register 1*/
+#define UART1_CONF1_REG                      (*(vuint32 *)(&__IPSBAR[0x3FF50024]))              /*UART1 configuration register 1*/
+#define UART2_CONF1_REG                      (*(vuint32 *)(&__IPSBAR[0x3FF6E024]))              /*UART2 configuration register 1*/
+#define UART0_CLKDIV_REG                     (*(vuint32 *)(&__IPSBAR[0x3FF40014]))              /*UART0 Clock divider configuration*/
+#define UART1_CLKDIV_REG                     (*(vuint32 *)(&__IPSBAR[0x3FF50014]))              /*UART1 Clock divider configuration*/
+#define UART2_CLKDIV_REG                     (*(vuint32 *)(&__IPSBAR[0x3FF6E014]))              /*UART2 Clock divider configuration*/
+#define UART0_FLOW_CONF_REG                  (*(vuint32 *)(&__IPSBAR[0x3FF40034]))              /*UART0 Software flow-control configuration*/
+#define UART1_FLOW_CONF_REG                  (*(vuint32 *)(&__IPSBAR[0x3FF50034]))              /*UART1 Software flow-control configuration*/
+#define UART2_FLOW_CONF_REG                  (*(vuint32 *)(&__IPSBAR[0x3FF6E034]))              /*UART2 Software flow-control configuration*/
+#define UART0_SWFC_CONF_REG                  (*(vuint32 *)(&__IPSBAR[0x3FF4003C]))              /*UART0 Software flow-control character configuration*/
+#define UART1_SWFC_CONF_REG                  (*(vuint32 *)(&__IPSBAR[0x3FF5003C]))              /*UART1 Software flow-control character configuration*/
+#define UART2_SWFC_CONF_REG                  (*(vuint32 *)(&__IPSBAR[0x3FF6E03C]))              /*UART2 Software flow-control character configuration*/
+#define UART0_SLEEP_CONF_REG                 (*(vuint32 *)(&__IPSBAR[0x3FF40038]))              /*UART0 Sleep-mode configuration*/
+#define UART1_SLEEP_CONF_REG                 (*(vuint32 *)(&__IPSBAR[0x3FF50038]))              /*UART1 Sleep-mode configuration*/
+#define UART2_SLEEP_CONF_REG                 (*(vuint32 *)(&__IPSBAR[0x3FF6E038]))              /*UART2 Sleep-mode configuration*/
+#define UART0_IDLE_CONF_REG                  (*(vuint32 *)(&__IPSBAR[0x3FF40040]))              /*UART0 Frame-end idle configuration*/
+#define UART1_IDLE_CONF_REG                  (*(vuint32 *)(&__IPSBAR[0x3FF50040]))              /*UART1 Frame-end idle configuration*/
+#define UART2_IDLE_CONF_REG                  (*(vuint32 *)(&__IPSBAR[0x3FF6E040]))              /*UART2 Frame-end idle configuration*/
+#define UAR0_RS485_CONF_REG                  (*(vuint32 *)(&__IPSBAR[0x3FF40044]))              /*RS485 mode configuration*/
+#define UAR1_RS485_CONF_REG                  (*(vuint32 *)(&__IPSBAR[0x3FF50044]))              /*RS485 mode configuration*/
+#define UAR2_RS485_CONF_REG                  (*(vuint32 *)(&__IPSBAR[0x3FF6E044]))              /*RS485 mode configuration*/
+
+#define UART0_STATUS_REG                     (*(vuint32 *)(&__IPSBAR[0x3FF4001C]))              /*UART0 UART status registerr*/
+#define UART1_STATUS_REG                     (*(vuint32 *)(&__IPSBAR[0x3FF5001C]))              /*UART1 UART status registerr*/
+#define UART2_STATUS_REG                     (*(vuint32 *)(&__IPSBAR[0x3FF6E01C]))              /*UART2 UART status registerr*/
+#define UART0_MEM_TX_STATUS_REG              (*(vuint32 *)(&__IPSBAR[0x3FF4005C]))              /*UART0 TX FIFO write and read offset address*/
+#define UART1_MEM_TX_STATUS_REG              (*(vuint32 *)(&__IPSBAR[0x3FF5005C]))              /*UART1 TX FIFO write and read offset address*/
+#define UART2_MEM_TX_STATUS_REG              (*(vuint32 *)(&__IPSBAR[0x3FF6E05C]))              /*UART2 TX FIFO write and read offset address*/
+#define UART0_MEM_RX_STATUS_REG              (*(vuint32 *)(&__IPSBAR[0x3FF40060]))              /*UART0 RX FIFO write and read offset address*/
+#define UART1_MEM_RX_STATUS_REG              (*(vuint32 *)(&__IPSBAR[0x3FF50060]))              /*UART1 RX FIFO write and read offset address*/
+#define UART2_MEM_RX_STATUS_REG              (*(vuint32 *)(&__IPSBAR[0x3FF6E060]))              /*UART2 RX FIFO write and read offset address*/
+
+#define UART0_AUTOBAUD_REG                   (*(vuint32 *)(&__IPSBAR[0x3FF40018]))              /*UART0 Autobaud configuration register*/
+#define UART1_AUTOBAUD_REG                   (*(vuint32 *)(&__IPSBAR[0x3FF50018]))              /*UART1 Autobaud configuration register*/
+#define UART2_AUTOBAUD_REG                   (*(vuint32 *)(&__IPSBAR[0x3FF6E018]))              /*UART2 Autobaud configuration register*/
+#define UART0_LOWPULSE_REG                   (*(vuint32 *)(&__IPSBAR[0x3FF40028]))              /*UART0 Autobaud minimum low pulse duration register*/
+#define UART1_LOWPULSE_REG                   (*(vuint32 *)(&__IPSBAR[0x3FF50028]))              /*UART1 Autobaud minimum low pulse duration register*/
+#define UART2_LOWPULSE_REG                   (*(vuint32 *)(&__IPSBAR[0x3FF6E028]))              /*UART2 Autobaud minimum low pulse duration register*/
+#define UART0_HIGHPULSE_REG                  (*(vuint32 *)(&__IPSBAR[0x3FF4002C]))              /*UART0 Autobaud minimum high pulse duration register*/
+#define UART1_HIGHPULSE_REG                  (*(vuint32 *)(&__IPSBAR[0x3FF5002C]))              /*UART1 Autobaud minimum high pulse duration register*/
+#define UART2_HIGHPULSE_REG                  (*(vuint32 *)(&__IPSBAR[0x3FF6E02C]))              /*UART2 Autobaud minimum high pulse duration register*/
+#define UART0_POSPULSE_REG                   (*(vuint32 *)(&__IPSBAR[0x3FF40068]))              /*UART0 Autobaud high pulse register*/
+#define UART1_POSPULSE_REG                   (*(vuint32 *)(&__IPSBAR[0x3FF50068]))              /*UART1 Autobaud high pulse register*/
+#define UART2_POSPULSE_REG                   (*(vuint32 *)(&__IPSBAR[0x3FF6E068]))              /*UART2 Autobaud high pulse register*/
+#define UART0_NEGPULSE_REG                   (*(vuint32 *)(&__IPSBAR[0x3FF4006C]))              /*UART0 Autobaud low pulse register*/
+#define UART1_NEGPULSE_REG                   (*(vuint32 *)(&__IPSBAR[0x3FF5006C]))              /*UART1 Autobaud low pulse register*/
+#define UART2_NEGPULSE_REG                   (*(vuint32 *)(&__IPSBAR[0x3FF6E06C]))              /*UART2 Autobaud low pulse register*/
+#define UART0_RXD_CNT_REG                    (*(vuint32 *)(&__IPSBAR[0x3FF40030]))              /*UART0 Autobaud edge change count register*/
+#define UART1_RXD_CNT_REG                    (*(vuint32 *)(&__IPSBAR[0x3FF50030]))              /*UART1 Autobaud edge change count register*/
+#define UART2_RXD_CNT_REG                    (*(vuint32 *)(&__IPSBAR[0x3FF6E030]))              /*UART2 Autobaud edge change count register*/
+
+#define UART0_AT_CMD_PRECNT_REG              (*(vuint32 *)(&__IPSBAR[0x3FF40048]))              /*Pre-sequence timing configuration*/
+#define UART1_AT_CMD_PRECNT_REG              (*(vuint32 *)(&__IPSBAR[0x3FF50048]))              /*Pre-sequence timing configuration*/
+#define UART2_AT_CMD_PRECNT_REG              (*(vuint32 *)(&__IPSBAR[0x3FF6E048]))              /*Pre-sequence timing configuration*/
+#define UART0_AT_CMD_POSTCNT_REG             (*(vuint32 *)(&__IPSBAR[0x3FF4004C]))              /*Post-sequence timing configuration*/
+#define UART1_AT_CMD_POSTCNT_REG             (*(vuint32 *)(&__IPSBAR[0x3FF5004C]))              /*Post-sequence timing configuration*/
+#define UART2_AT_CMD_POSTCNT_REG             (*(vuint32 *)(&__IPSBAR[0x3FF6E04C]))              /*Post-sequence timing configuration*/
+#define UART0_AT_CMD_GAPTOUT_REG             (*(vuint32 *)(&__IPSBAR[0x3FF40050]))              /*Timeout configuration*/
+#define UART1_AT_CMD_GAPTOUT_REG             (*(vuint32 *)(&__IPSBAR[0x3FF50050]))              /*Timeout configuration*/
+#define UART2_AT_CMD_GAPTOUT_REG             (*(vuint32 *)(&__IPSBAR[0x3FF6E050]))              /*Timeout configuration*/
+#define UART0_AT_CMD_CHAR_REG                (*(vuint32 *)(&__IPSBAR[0x3FF40054]))              /*AT escape seq detection configuration*/
+#define UART1_AT_CMD_CHAR_REG                (*(vuint32 *)(&__IPSBAR[0x3FF50054]))              /*AT escape seq detection configuration*/
+#define UART2_AT_CMD_CHAR_REG                (*(vuint32 *)(&__IPSBAR[0x3FF6E054]))              /*AT escape seq detection configuration*/
+
+#define UART0_FIFO_REG                       (*(vuint32 *)(&__IPSBAR[0x3FF40000]))              /*UART0 FIFO configuration*/
+#define UART1_FIFO_REG                       (*(vuint32 *)(&__IPSBAR[0x3FF50000]))              /*UART1 FIFO configuration*/
+#define UART2_FIFO_REG                       (*(vuint32 *)(&__IPSBAR[0x3FF6E000]))              /*UART2 FIFO configuration*/
+#define UART0_MEM_CONF_REG                   (*(vuint32 *)(&__IPSBAR[0x3FF40058]))              /*UART0 Memory configuration*/
+#define UART1_MEM_CONF_REG                   (*(vuint32 *)(&__IPSBAR[0x3FF50058]))              /*UART1 Memory configuration*/
+#define UART2_MEM_CONF_REG                   (*(vuint32 *)(&__IPSBAR[0x3FF6E058]))              /*UART2 Memory configuration*/
+#define UART0_MEM_CNT_STATUS_REG             (*(vuint32 *)(&__IPSBAR[0x3FF40064]))              /*UART0 Receive and transmit memory configuration*/
+#define UART1_MEM_CNT_STATUS_REG             (*(vuint32 *)(&__IPSBAR[0x3FF50064]))              /*UART1 Receive and transmit memory configuration*/
+#define UART2_MEM_CNT_STATUS_REG             (*(vuint32 *)(&__IPSBAR[0x3FF6E064]))              /*UART2 Receive and transmit memory configuration*/
+
+#define UART0_INT_RAW_REG                    (*(vuint32 *)(&__IPSBAR[0x3FF40004]))              /*UART0 Raw interrupt status*/
+#define UART1_INT_RAW_REG                    (*(vuint32 *)(&__IPSBAR[0x3FF50004]))              /*UART1 Raw interrupt status*/
+#define UART2_INT_RAW_REG                    (*(vuint32 *)(&__IPSBAR[0x3FF6E004]))              /*UART2 Raw interrupt status*/
+#define UART0_INT_ST_REG                     (*(vuint32 *)(&__IPSBAR[0x3FF40008]))              /*UART0 Masked interrupt status*/
+#define UART1_INT_ST_REG                     (*(vuint32 *)(&__IPSBAR[0x3FF50008]))              /*UART1 Masked interrupt status*/
+#define UART2_INT_ST_REG                     (*(vuint32 *)(&__IPSBAR[0x3FF6E008]))              /*UART2 Masked interrupt status*/
+#define UART0_INT_ENA_REG                    (*(vuint32 *)(&__IPSBAR[0x3FF4000C]))              /*UART0 Interrupt enable bits*/
+#define UART1_INT_ENA_REG                    (*(vuint32 *)(&__IPSBAR[0x3FF5000C]))              /*UART1 Interrupt enable bits*/
+#define UART2_INT_ENA_REG                    (*(vuint32 *)(&__IPSBAR[0x3FF6E00C]))              /*UART2 Interrupt enable bits*/
+#define UART0_INT_CLR_REG                    (*(vuint32 *)(&__IPSBAR[0x3FF40010]))              /*UART0 Interrupt clear bits*/
+#define UART1_INT_CLR_REG                    (*(vuint32 *)(&__IPSBAR[0x3FF50010]))              /*UART1 Interrupt clear bits*/
+#define UART2_INT_CLR_REG                    (*(vuint32 *)(&__IPSBAR[0x3FF6E010]))              /*UART2 Interrupt clear bits*/
+
+#define UDMA0_UHCI_CONF0_REG                 (*(vuint32 *)(&__IPSBAR[0x3FF54000]))              /*UART and frame separation config*/
+#define UDMA1_UHCI_CONF0_REG                 (*(vuint32 *)(&__IPSBAR[0x3FF4C000]))              /*UART and frame separation config*/
+#define UDMA0_UHCI_CONF1_REG                 (*(vuint32 *)(&__IPSBAR[0x3FF5402C]))              /*UHCI config register*/
+#define UDMA1_UHCI_CONF1_REG                 (*(vuint32 *)(&__IPSBAR[0x3FF4C02C]))              /*UHCI config register*/
+#define UDMA0_UHCI_ESCAPE_CONF_REG           (*(vuint32 *)(&__IPSBAR[0x3FF54064]))              /*Escape character configuration*/
+#define UDMA1_UHCI_ESCAPE_CONF_REG           (*(vuint32 *)(&__IPSBAR[0x3FF4C064]))              /*Escape character configuration*/
+#define UDMA0_UHCI_HUNG_CONF_REG             (*(vuint32 *)(&__IPSBAR[0x3FF54068]))              /*Timeout detection configuration*/
+#define UDMA1_UHCI_HUNG_CONF_REG             (*(vuint32 *)(&__IPSBAR[0x3FF4C068]))              /*Timeout detection configuration*/
+#define UDMA0_UHCI_ESC_CONF0_REG             (*(vuint32 *)(&__IPSBAR[0x3FF540B0]))              /*Escape sequence configuration register 0*/
+#define UDMA1_UHCI_ESC_CONF0_REG             (*(vuint32 *)(&__IPSBAR[0x3FF4C0B0]))              /*Escape sequence configuration register 0*/
+#define UDMA0_UHCI_ESC_CONF1_REG             (*(vuint32 *)(&__IPSBAR[0x3FF540B4]))              /*Escape sequence configuration register 1*/
+#define UDMA1_UHCI_ESC_CONF1_REG             (*(vuint32 *)(&__IPSBAR[0x3FF4C0B4]))              /*Escape sequence configuration register 1*/
+#define UDMA0_UHCI_ESC_CONF2_REG             (*(vuint32 *)(&__IPSBAR[0x3FF540B8]))              /*Escape sequence configuration register 2*/
+#define UDMA1_UHCI_ESC_CONF2_REG             (*(vuint32 *)(&__IPSBAR[0x3FF4C0B8]))              /*Escape sequence configuration register 2*/
+#define UDMA0_UHCI_UHCI_ESC_CONF3_REG        (*(vuint32 *)(&__IPSBAR[0x3FF540BC]))              /*Escape sequence configuration register 3*/
+#define UDMA1_UHCI_ESC_CONF3_REG             (*(vuint32 *)(&__IPSBAR[0x3FF4C0BC]))              /*Escape sequence configuration register 3*/
+
+#define UDMA0_UHCI_DMA_OUT_LINK_REG          (*(vuint32 *)(&__IPSBAR[0x3FF54024]))              /*Link descriptor address and control*/
+#define UDMA1_UHCI_DMA_OUT_LINK_REG          (*(vuint32 *)(&__IPSBAR[0x3FF4C024]))              /*Link descriptor address and control*/
+#define UDMA0_UHCI_DMA_IN_LINK_REG           (*(vuint32 *)(&__IPSBAR[0x3FF54028]))              /*Link descriptor address and control*/
+#define UDMA1_UHCI_DMA_IN_LINK_REG           (*(vuint32 *)(&__IPSBAR[0x3FF4C028]))              /*Link descriptor address and control*/
+#define UDMA0_UHCI_DMA_OUT_PUSH_REG          (*(vuint32 *)(&__IPSBAR[0x3FF54018]))              /*FIFO data push register*/
+#define UDMA1_UHCI_DMA_OUT_PUSH_REG          (*(vuint32 *)(&__IPSBAR[0x3FF4C018]))              /*FIFO data push register*/
+#define UDMA0_UHCI_DMA_IN_POP_REG            (*(vuint32 *)(&__IPSBAR[0x3FF54020]))              /*FIFO data pop register*/
+#define UDMA1_UHCI_DMA_IN_POP_REG            (*(vuint32 *)(&__IPSBAR[0x3FF4C020]))              /*FIFO data pop register*/
+
+#define UDMA0_UHCI_DMA_OUT_STATUS_REG        (*(vuint32 *)(&__IPSBAR[0x3FF54014]))              /*DMA FIFO status register*/
+#define UDMA1_UHCI_DMA_OUT_STATUS_REG        (*(vuint32 *)(&__IPSBAR[0x3FF4C014]))              /*DMA FIFO status register*/
+#define UDMA0_UHCI_DMA_OUT_EOF_DES_ADDR_REG  (*(vuint32 *)(&__IPSBAR[0x3FF54038]))              /*Out EOF link descriptor address on success*/
+#define UDMA1_UHCI_DMA_OUT_EOF_DES_ADDR_REG  (*(vuint32 *)(&__IPSBAR[0x3FF4C038]))              /*Out EOF link descriptor address on success*/
+#define UDMA0_UHCI_DMA_OUT_EOF_BFR_DES_ADDR_REG (*(vuint32 *)(&__IPSBAR[0x3FF54044]))           /*Out EOF link descriptor address on err*/
+#define UDMA1_UHCI_DMA_OUT_EOF_BFR_DES_ADDR_REG (*(vuint32 *)(&__IPSBAR[0x3FF4C044]))           /*Out EOF link descriptor address on err*/
+#define UDMA0_UHCI_DMA_IN_SUC_EOF_DES_ADDR_REG (*(vuint32 *)(&__IPSBAR[0x3FF5403C]))            /*In EOF link descriptor address on success*/
+#define UDMA1_UHCI_DMA_IN_SUC_EOF_DES_ADDR_REG (*(vuint32 *)(&__IPSBAR[0x3FF4C03C]))            /*In EOF link descriptor address on success*/
+#define UDMA0_UHCI_DMA_IN_ERR_EOF_DES_ADDR_REG (*(vuint32 *)(&__IPSBAR[0x3FF54040]))            /*In EOF link descriptor address on err*/
+#define UDMA1_UHCI_DMA_IN_ERR_EOF_DES_ADDR_REG (*(vuint32 *)(&__IPSBAR[0x3FF4C040]))            /*In EOF link descriptor address on err*/
+#define UDMA0_UHCI_DMA_IN_DSCR_REG           (*(vuint32 *)(&__IPSBAR[0x3FF5404C]))              /*Current inlink descriptor, first word*/
+#define UDMA1_UHCI_DMA_IN_DSCR_REG           (*(vuint32 *)(&__IPSBAR[0x3FF4C04C]))              /*Current inlink descriptor, first word*/
+#define UDMA0_UHCI_DMA_IN_DSCR_BF0_REG       (*(vuint32 *)(&__IPSBAR[0x3FF54050]))              /*Current inlink descriptor, second word*/
+#define UDMA1_UHCI_DMA_IN_DSCR_BF0_REG       (*(vuint32 *)(&__IPSBAR[0x3FF4C050]))              /*Current inlink descriptor, second word*/
+#define UDMA0_UHCI_DMA_IN_DSCR_BF1_REG       (*(vuint32 *)(&__IPSBAR[0x3FF54054]))              /*Current inlink descriptor, third word*/
+#define UDMA1_UHCI_DMA_IN_DSCR_BF1_REG       (*(vuint32 *)(&__IPSBAR[0x3FF4C054]))              /*Current inlink descriptor, third word*/
+#define UDMA0_UHCI_DMA_OUT_DSCR_REG          (*(vuint32 *)(&__IPSBAR[0x3FF54058]))              /*Current outlink descriptor, first word*/
+#define UDMA1_UHCI_DMA_OUT_DSCR_REG          (*(vuint32 *)(&__IPSBAR[0x3FF4C058]))              /*Current outlink descriptor, first word*/
+#define UDMA0_UHCI_DMA_OUT_DSCR_BF0_REG      (*(vuint32 *)(&__IPSBAR[0x3FF5405C]))              /*Current outlink descriptor, second word*/
+#define UDMA1_UHCI_DMA_OUT_DSCR_BF0_REG      (*(vuint32 *)(&__IPSBAR[0x3FF4C05C]))              /*Current outlink descriptor, second word*/
+#define UDMA0_UHCI_DMA_OUT_DSCR_BF1_REG      (*(vuint32 *)(&__IPSBAR[0x3FF54060]))              /*Current outlink descriptor, third word*/
+#define UDMA1_UHCI_DMA_OUT_DSCR_BF1_REG      (*(vuint32 *)(&__IPSBAR[0x3FF4C060]))              /*Current outlink descriptor, third word*/
+
+#define UDMA0_UHCI_INT_RAW_REG               (*(vuint32 *)(&__IPSBAR[0x3FF54004]))              /*UART0 Raw interrupt status*/
+#define UDMA1_UHCI_INT_RAW_REG               (*(vuint32 *)(&__IPSBAR[0x3FF4C004]))              /*UART1 Raw interrupt status*/
+#define UDMA0_UHCI_INT_ST_REG                (*(vuint32 *)(&__IPSBAR[0x3FF54008]))              /*UART0 Masked interrupt status*/
+#define UDMA1_UHCI_INT_ST_REG                (*(vuint32 *)(&__IPSBAR[0x3FF4C008]))              /*UART1 Masked interrupt status*/
+#define UDMA0_UHCI_INT_ENA_REG               (*(vuint32 *)(&__IPSBAR[0x3FF5400C]))              /*UART0 Interrupt enable bits*/
+#define UDMA1_UHCI_INT_ENA_REG               (*(vuint32 *)(&__IPSBAR[0x3FF4C00C]))              /*UART1 Interrupt enable bits*/
+#define UDMA0_UHCI_INT_CLR_REG               (*(vuint32 *)(&__IPSBAR[0x3FF54010]))              /*UART0 Interrupt clear bits*/
+#define UDMA1_UHCI_INT_CLR_REG               (*(vuint32 *)(&__IPSBAR[0x3FF4C010]))              /*UART1 Interrupt clear bits*/
+
+#define UDMAm_UHCI_ESC_CONFn_REG(m, n)       (*(vuint32 *)(&__IPSBAR[0x3FF540B0 + (m * 0x40) + (n * 4)])) /*Escape sequence configuration register*/
+
+/***********************************************************************/
+/*
+ * LED PWM Contr (LEDC) registers
+ *
+ * 
+ */
+
 #endif
