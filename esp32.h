@@ -1,4 +1,4 @@
-/*
+`/*
 * Author: Ashton Fritz
 * File: esp32.h
 * Purpose: Definitions for ESP32
@@ -1523,6 +1523,141 @@ typedef volatile uint32		                    vuint32 __attribute__((__may_alias_
 /***********************************************************************/
 /*
  * LED PWM Contr (LEDC) registers
+ *
+ * 
+ */
+#define LEDC_CONF_REG                        (*(vuint32 *)(&__IPSBAR[0x3FF59190]))              /*LEDC configuration register*/
+#define LEDC_HSCH0_CONF0_REG                 (*(vuint32 *)(&__IPSBAR[0x3FF59000]))              /*Configuration register 0 for high-speed channel 0*/
+#define LEDC_HSCH1_CONF0_REG                 (*(vuint32 *)(&__IPSBAR[0x3FF59014]))              /*Configuration register 0 for high-speed channel 1*/
+#define LEDC_HSCH2_CONF0_REG                 (*(vuint32 *)(&__IPSBAR[0x3FF59028]))              /*Configuration register 0 for high-speed channel 2*/
+#define LEDC_HSCH3_CONF0_REG                 (*(vuint32 *)(&__IPSBAR[0x3FF5903C]))              /*Configuration register 0 for high-speed channel 3*/
+#define LEDC_HSCH4_CONF0_REG                 (*(vuint32 *)(&__IPSBAR[0x3FF59050]))              /*Configuration register 0 for high-speed channel 4*/
+#define LEDC_HSCH5_CONF0_REG                 (*(vuint32 *)(&__IPSBAR[0x3FF59064]))              /*Configuration register 0 for high-speed channel 5*/
+#define LEDC_HSCH6_CONF0_REG                 (*(vuint32 *)(&__IPSBAR[0x3FF59078]))              /*Configuration register 0 for high-speed channel 6*/
+#define LEDC_HSCH7_CONF0_REG                 (*(vuint32 *)(&__IPSBAR[0x3FF5908C]))              /*Configuration register 0 for high-speed channel 7*/
+#define LEDC_HSCH0_CONF1_REG                 (*(vuint32 *)(&__IPSBAR[0x3FF5900C]))              /*Configuration register 1 for high-speed channel 0*/
+#define LEDC_HSCH1_CONF1_REG                 (*(vuint32 *)(&__IPSBAR[0x3FF59020]))              /*Configuration register 1 for high-speed channel 1*/
+#define LEDC_HSCH2_CONF1_REG                 (*(vuint32 *)(&__IPSBAR[0x3FF59034]))              /*Configuration register 1 for high-speed channel 2*/
+#define LEDC_HSCH3_CONF1_REG                 (*(vuint32 *)(&__IPSBAR[0x3FF59048]))              /*Configuration register 1 for high-speed channel 3*/
+#define LEDC_HSCH4_CONF1_REG                 (*(vuint32 *)(&__IPSBAR[0x3FF5905C]))              /*Configuration register 1 for high-speed channel 4*/
+#define LEDC_HSCH5_CONF1_REG                 (*(vuint32 *)(&__IPSBAR[0x3FF59070]))              /*Configuration register 1 for high-speed channel 5*/
+#define LEDC_HSCH6_CONF1_REG                 (*(vuint32 *)(&__IPSBAR[0x3FF59084]))              /*Configuration register 1 for high-speed channel 6*/
+#define LEDC_HSCH7_CONF1_REG                 (*(vuint32 *)(&__IPSBAR[0x3FF59098]))              /*Configuration register 1 for high-speed channel 7*/
+#define LEDC_LSCH1_CONF0_REG                 (*(vuint32 *)(&__IPSBAR[0x3FF590A0]))              /*Configuration register 0 for low-speed channel 1*/
+#define LEDC_LSCH2_CONF0_REG                 (*(vuint32 *)(&__IPSBAR[0x3FF590B4]))              /*Configuration register 0 for low-speed channel 2*/
+#define LEDC_LSCH3_CONF0_REG                 (*(vuint32 *)(&__IPSBAR[0x3FF590C8]))              /*Configuration register 0 for low-speed channel 3*/
+#define LEDC_LSCH4_CONF0_REG                 (*(vuint32 *)(&__IPSBAR[0x3FF590DC]))              /*Configuration register 0 for low-speed channel 4*/
+#define LEDC_LSCH5_CONF0_REG                 (*(vuint32 *)(&__IPSBAR[0x3FF590F0]))              /*Configuration register 0 for low-speed channel 5*/
+#define LEDC_LSCH6_CONF0_REG                 (*(vuint32 *)(&__IPSBAR[0x3FF5912C]))              /*Configuration register 0 for low-speed channel 6*/
+#define LEDC_LSCH7_CONF0_REG                 (*(vuint32 *)(&__IPSBAR[0x3FF590AC]))              /*Configuration register 0 for low-speed channel 7*/
+#define LEDC_LSCH1_CONF1_REG                 (*(vuint32 *)(&__IPSBAR[0x3FF590C0]))              /*Configuration register 1 for low-speed channel 1*/
+#define LEDC_LSCH2_CONF1_REG                 (*(vuint32 *)(&__IPSBAR[0x3FF590D4]))              /*Configuration register 1 for low-speed channel 2*/
+#define LEDC_LSCH3_CONF1_REG                 (*(vuint32 *)(&__IPSBAR[0x3FF590E8]))              /*Configuration register 1 for low-speed channel 3*/
+#define LEDC_LSCH4_CONF1_REG                 (*(vuint32 *)(&__IPSBAR[0x3FF590FC]))              /*Configuration register 1 for low-speed channel 4*/
+#define LEDC_LSCH5_CONF1_REG                 (*(vuint32 *)(&__IPSBAR[0x3FF59110]))              /*Configuration register 1 for low-speed channel 5*/
+#define LEDC_LSCH6_CONF1_REG                 (*(vuint32 *)(&__IPSBAR[0x3FF59124]))              /*Configuration register 1 for low-speed channel 6*/
+#define LEDC_LSCH7_CONF1_REG                 (*(vuint32 *)(&__IPSBAR[0x3FF59138]))              /*Configuration register 1 for low-speed channel 7*/
+
+#define LEDC_HSCH0_DUTY_REG                  (*(vuint32 *)(&__IPSBAR[0x3FF59008]))              /*Initial duty cycle for high-speed channel 0 */
+#define LEDC_HSCH1_DUTY_REG                  (*(vuint32 *)(&__IPSBAR[0x3FF5901C]))              /*Initial duty cycle for high-speed channel 1 */
+#define LEDC_HSCH2_DUTY_REG                  (*(vuint32 *)(&__IPSBAR[0x3FF59030]))              /*Initial duty cycle for high-speed channel 2 */
+#define LEDC_HSCH3_DUTY_REG                  (*(vuint32 *)(&__IPSBAR[0x3FF59044]))              /*Initial duty cycle for high-speed channel 3 */
+#define LEDC_HSCH4_DUTY_REG                  (*(vuint32 *)(&__IPSBAR[0x3FF59058]))              /*Initial duty cycle for high-speed channel 4 */
+#define LEDC_HSCH5_DUTY_REG                  (*(vuint32 *)(&__IPSBAR[0x3FF5906C]))              /*Initial duty cycle for high-speed channel 5 */
+#define LEDC_HSCH6_DUTY_REG                  (*(vuint32 *)(&__IPSBAR[0x3FF59080]))              /*Initial duty cycle for high-speed channel 6 */
+#define LEDC_HSCH7_DUTY_REG                  (*(vuint32 *)(&__IPSBAR[0x3FF59094]))              /*Initial duty cycle for high-speed channel 7 */
+
+#define LEDC_LSCH0_DUTY_REG                  (*(vuint32 *)(&__IPSBAR[0x3FF590A8]))              /*Initial duty cycle for low-speed channel 0 */
+#define LEDC_LSCH1_DUTY_REG                  (*(vuint32 *)(&__IPSBAR[0x3FF590BC]))              /*Initial duty cycle for low-speed channel 1 */
+#define LEDC_LSCH2_DUTY_REG                  (*(vuint32 *)(&__IPSBAR[0x3FF590D0]))              /*Initial duty cycle for low-speed channel 2 */
+#define LEDC_LSCH3_DUTY_REG                  (*(vuint32 *)(&__IPSBAR[0x3FF590E4]))              /*Initial duty cycle for low-speed channel 3 */
+#define LEDC_LSCH4_DUTY_REG                  (*(vuint32 *)(&__IPSBAR[0x3FF590F8]))              /*Initial duty cycle for low-speed channel 4 */
+#define LEDC_LSCH5_DUTY_REG                  (*(vuint32 *)(&__IPSBAR[0x3FF5910C]))              /*Initial duty cycle for low-speed channel 5 */
+#define LEDC_LSCH6_DUTY_REG                  (*(vuint32 *)(&__IPSBAR[0x3FF59120]))              /*Initial duty cycle for low-speed channel 6 */
+#define LEDC_LSCH7_DUTY_REG                  (*(vuint32 *)(&__IPSBAR[0x3FF59134]))              /*Initial duty cycle for low-speed channel 7 */
+#define LEDC_LSCH0_DUTY_R_REG                (*(vuint32 *)(&__IPSBAR[0x3FF590B0]))              /*Initial duty cycle for low-speed channel 0 */
+#define LEDC_LSCH1_DUTY_R_REG                (*(vuint32 *)(&__IPSBAR[0x3FF590C4]))              /*Initial duty cycle for low-speed channel 1 */
+#define LEDC_LSCH2_DUTY_R_REG                (*(vuint32 *)(&__IPSBAR[0x3FF590D8]))              /*Initial duty cycle for low-speed channel 2 */
+#define LEDC_LSCH3_DUTY_R_REG                (*(vuint32 *)(&__IPSBAR[0x3FF590EC]))              /*Initial duty cycle for low-speed channel 3 */
+#define LEDC_LSCH4_DUTY_R_REG                (*(vuint32 *)(&__IPSBAR[0x3FF59100]))              /*Initial duty cycle for low-speed channel 4 */
+#define LEDC_LSCH5_DUTY_R_REG                (*(vuint32 *)(&__IPSBAR[0x3FF59114]))              /*Initial duty cycle for low-speed channel 5 */
+#define LEDC_LSCH6_DUTY_R_REG                (*(vuint32 *)(&__IPSBAR[0x3FF59128]))              /*Initial duty cycle for low-speed channel 6 */
+#define LEDC_LSCH7_DUTY_R_REG                (*(vuint32 *)(&__IPSBAR[0x3FF5913C]))              /*Initial duty cycle for low-speed channel 7 */
+
+#define LEDC_HSTIMER0_CONF_REG               (*(vuint32 *)(&__IPSBAR[0x3FF59140]))              /*High-speed timer 0 configuration register*/
+#define LEDC_HSTIMER1_CONF_REG               (*(vuint32 *)(&__IPSBAR[0x3FF59148]))              /*High-speed timer 1 configuration register*/
+#define LEDC_HSTIMER2_CONF_REG               (*(vuint32 *)(&__IPSBAR[0x3FF59150]))              /*High-speed timer 2 configuration register*/
+#define LEDC_HSTIMER3_CONF_REG               (*(vuint32 *)(&__IPSBAR[0x3FF59158]))              /*High-speed timer 3 configuration register*/
+#define LEDC_HSTIMER0_VALUE_REG              (*(vuint32 *)(&__IPSBAR[0x3FF59144]))              /*High-speed timer 0 value register*/
+#define LEDC_HSTIMER1_VALUE_REG              (*(vuint32 *)(&__IPSBAR[0x3FF5914C]))              /*High-speed timer 1 value register*/
+#define LEDC_HSTIMER2_VALUE_REG              (*(vuint32 *)(&__IPSBAR[0x3FF59154]))              /*High-speed timer 2 value register*/
+#define LEDC_HSTIMER3_VALUE_REG              (*(vuint32 *)(&__IPSBAR[0x3FF5915C]))              /*High-speed timer 3 value register*/
+#define LEDC_LSTIMER0_CONF_REG               (*(vuint32 *)(&__IPSBAR[0x3FF59160]))              /*Low-speed timer 0 configuration register*/
+#define LEDC_LSTIMER1_CONF_REG               (*(vuint32 *)(&__IPSBAR[0x3FF59168]))              /*Low-speed timer 1 configuration register*/
+#define LEDC_LSTIMER2_CONF_REG               (*(vuint32 *)(&__IPSBAR[0x3FF59170]))              /*Low-speed timer 2 configuration register*/
+#define LEDC_LSTIMER3_CONF_REG               (*(vuint32 *)(&__IPSBAR[0x3FF59178]))              /*Low-speed timer 3 configuration register*/
+#define LEDC_LSTIMER0_VALUE_REG              (*(vuint32 *)(&__IPSBAR[0x3FF59164]))              /*Low-speed timer 0 value register*/
+#define LEDC_LSTIMER1_VALUE_REG              (*(vuint32 *)(&__IPSBAR[0x3FF5916C]))              /*Low-speed timer 1 value register*/
+#define LEDC_LSTIMER2_VALUE_REG              (*(vuint32 *)(&__IPSBAR[0x3FF59174]))              /*Low-speed timer 2 value register*/
+#define LEDC_LSTIMER3_VALUE_REG              (*(vuint32 *)(&__IPSBAR[0x3FF5917C]))              /*Low-speed timer 3 value register*/
+
+#define LEDC_INT_RAW_REG                     (*(vuint32 *)(&__IPSBAR[0x3FF59180]))              /*LEDC Raw interrupt status*/
+#define LEDC_INT_ST_REG                      (*(vuint32 *)(&__IPSBAR[0x3FF59184]))              /*LEDC Masked interrupt status*/
+#define LEDC_INT_ENA_REG                     (*(vuint32 *)(&__IPSBAR[0x3FF59188]))              /*LEDC Interrupt enable bits*/
+#define LEDC_INT_CLR_REG                     (*(vuint32 *)(&__IPSBAR[0x3FF5918C]))              /*LEDC Interrupt clear bits*/
+
+/***********************************************************************/
+/*
+ * Remote Control Peripheral (RMT)
+ *
+ * 
+ */
+
+#define RMT_CH0CONF0_REG                    (*(vuint32 *)(&__IPSBAR[0x3FF56020]))              /*Configuration register 0 for channel 0*/
+#define RMT_CH0CONF1_REG                    (*(vuint32 *)(&__IPSBAR[0x3FF56024]))              /*Configuration register 1 for channel 0*/
+#define RMT_CH1CONF0_REG                    (*(vuint32 *)(&__IPSBAR[0x3FF56028]))              /*Configuration register 0 for channel 1*/
+#define RMT_CH1CONF1_REG                    (*(vuint32 *)(&__IPSBAR[0x3FF5602C]))              /*Configuration register 1 for channel 1*/
+#define RMT_CH2CONF0_REG                    (*(vuint32 *)(&__IPSBAR[0x3FF56030]))              /*Configuration register 0 for channel 2*/
+#define RMT_CH2CONF1_REG                    (*(vuint32 *)(&__IPSBAR[0x3FF56034]))              /*Configuration register 1 for channel 2*/
+#define RMT_CH3CONF0_REG                    (*(vuint32 *)(&__IPSBAR[0x3FF56038]))              /*Configuration register 0 for channel 3*/
+#define RMT_CH3CONF1_REG                    (*(vuint32 *)(&__IPSBAR[0x3FF5603C]))              /*Configuration register 1 for channel 3*/
+#define RMT_CH4CONF0_REG                    (*(vuint32 *)(&__IPSBAR[0x3FF56040]))              /*Configuration register 0 for channel 4*/
+#define RMT_CH4CONF1_REG                    (*(vuint32 *)(&__IPSBAR[0x3FF56044]))              /*Configuration register 1 for channel 4*/
+#define RMT_CH5CONF0_REG                    (*(vuint32 *)(&__IPSBAR[0x3FF56048]))              /*Configuration register 0 for channel 5*/
+#define RMT_CH5CONF1_REG                    (*(vuint32 *)(&__IPSBAR[0x3FF5604C]))              /*Configuration register 1 for channel 5*/
+#define RMT_CH6CONF0_REG                    (*(vuint32 *)(&__IPSBAR[0x3FF56050]))              /*Configuration register 0 for channel 6*/
+#define RMT_CH6CONF1_REG                    (*(vuint32 *)(&__IPSBAR[0x3FF56054]))              /*Configuration register 1 for channel 6*/
+#define RMT_CH7CONF0_REG                    (*(vuint32 *)(&__IPSBAR[0x3FF56058]))              /*Configuration register 0 for channel 7*/
+#define RMT_CH7CONF1_REG                    (*(vuint32 *)(&__IPSBAR[0x3FF5605C]))              /*Configuration register 1 for channel 7*/
+
+#define RMT_INT_RAW_REG                     (*(vuint32 *)(&__IPSBAR[0x3FF560A0]))              /*RMT Raw interrupt status*/
+#define RMT_INT_ST_REG                      (*(vuint32 *)(&__IPSBAR[0x3FF560A4]))              /*RMT Masked interrupt status*/
+#define RMT_INT_ENA_REG                     (*(vuint32 *)(&__IPSBAR[0x3FF560A8]))              /*RMT Interrupt enable bits*/
+#define RMT_INT_CLR_REG                     (*(vuint32 *)(&__IPSBAR[0x3FF560AC]))              /*RMT Interrupt clear bits*/
+
+#define RMT_CH0CARRIER_DUTY_REG             (*(vuint32 *)(&__IPSBAR[0x3FF560B0]))              /*Carrier duty cycle for channel 0*/
+#define RMT_CH1CARRIER_DUTY_REG             (*(vuint32 *)(&__IPSBAR[0x3FF560B4]))              /*Carrier duty cycle for channel 1*/
+#define RMT_CH2CARRIER_DUTY_REG             (*(vuint32 *)(&__IPSBAR[0x3FF560B8]))              /*Carrier duty cycle for channel 2*/
+#define RMT_CH3CARRIER_DUTY_REG             (*(vuint32 *)(&__IPSBAR[0x3FF560BC]))              /*Carrier duty cycle for channel 3*/
+#define RMT_CH4CARRIER_DUTY_REG             (*(vuint32 *)(&__IPSBAR[0x3FF560C0]))              /*Carrier duty cycle for channel 4*/
+#define RMT_CH5CARRIER_DUTY_REG             (*(vuint32 *)(&__IPSBAR[0x3FF560C4]))              /*Carrier duty cycle for channel 5*/
+#define RMT_CH6CARRIER_DUTY_REG             (*(vuint32 *)(&__IPSBAR[0x3FF560C8]))              /*Carrier duty cycle for channel 6*/
+#define RMT_CH7CARRIER_DUTY_REG             (*(vuint32 *)(&__IPSBAR[0x3FF560CC]))              /*Carrier duty cycle for channel 7*/
+
+#define RMT_CH0_TX_LIM_REG                  (*(vuint32 *)(&__IPSBAR[0x3FF560D0]))              /*Channel 0 Tx event config reg*/
+#define RMT_CH1_TX_LIM_REG                  (*(vuint32 *)(&__IPSBAR[0x3FF560D4]))              /*Channel 1 Tx event config reg*/
+#define RMT_CH2_TX_LIM_REG                  (*(vuint32 *)(&__IPSBAR[0x3FF560D8]))              /*Channel 2 Tx event config reg*/
+#define RMT_CH3_TX_LIM_REG                  (*(vuint32 *)(&__IPSBAR[0x3FF560DC]))              /*Channel 3 Tx event config reg*/
+#define RMT_CH4_TX_LIM_REG                  (*(vuint32 *)(&__IPSBAR[0x3FF560E0]))              /*Channel 4 Tx event config reg*/
+#define RMT_CH5_TX_LIM_REG                  (*(vuint32 *)(&__IPSBAR[0x3FF560E4]))              /*Channel 5 Tx event config reg*/
+#define RMT_CH6_TX_LIM_REG                  (*(vuint32 *)(&__IPSBAR[0x3FF560E8]))              /*Channel 6 Tx event config reg*/
+#define RMT_CH7_TX_LIM_REG                  (*(vuint32 *)(&__IPSBAR[0x3FF560EC]))              /*Channel 7 Tx event config reg*/
+
+#define RMT_APB_CONF_REG                    (*(vuint32 *)(&__IPSBAR[0x3FF560F0]))              /*RMT-wide configuration register*/
+
+/***********************************************************************/
+/*
+ * Motor Control PWM (MCPWM) registers
  *
  * 
  */
